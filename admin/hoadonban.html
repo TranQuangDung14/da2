@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="/Home1.html"><img src="/image/logo.jpg" alt="" width="64px"></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="#"><i class="fa fa-cubes"></i> Bảng điều khiển</a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li><a href="hoadonnhap.html"><i class="fas fa-file-alt"></i> Hóa đơn nhập</a></li>
+            <li class="active"><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img style="width: 100%;" src="/image/your-logo.png" alt="">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Danh sách hóa đơn bán</h2>
+                </div>
+                <div class="title-right">
+                    <a href="hoadonban-them.html" class="btn btn-green"><i class="fa fa-plus"></i> Tạo hóa đơn</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Khách hàng</th>
+                        <th>Email</th>
+                        <th>Tổng sản phẩm</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày tạo</th>
+                        <th>Thao tác</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Trần Đức Thiện</td>
+                        <td>abc@gmail.com</td>
+                        <td>5</td>
+                        <td>5.400.000đ</td>
+                        <td>
+                            <span class="status status-orange">Chưa duyệt đơn</span>
+                        </td>
+                        <td>03/06/2021 22:40:05</td>
+                        <td>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Đình Quang</td>
+                        <td>adkahdk@gmail.com</td>
+                        <td>5</td>
+                        <td>5.400.000đ</td>
+                        <td>
+                            <span class="status status-green">Đã nhận hàng</span>
+                        </td>
+                        <td>03/06/2021 22:50:05</td>
+                        <td>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Đình Sơn</td>
+                        <td>123@gmail.com</td>
+                        <td>5</td>
+                        <td>5.400.000đ</td>
+                        <td>
+                            <span class="status status-orange">Chưa duyệt đơn</span>
+                        </td>
+                        <td>03/06/2021 22:40:05</td>
+                        <td>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Trần Quang Giang</td>
+                        <td>424c@gmail.com</td>
+                        <td>5</td>
+                        <td>5.400.000đ</td>
+                        <td>
+                            <span class="status status-green">Đã nhận hàng</span>
+                        </td>
+                        <td>03/06/2021 22:40:05</td>
+                        <td>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../jquery/jquery.min.js"></script>
+
+<script>
+    // $(".xoa-item"): lấy về cái nút có class là xoa-item
+    $(".xoa-item").click(function() {
+
+        $(this).parent().parent().remove(); 
+    });
+</script>
+
+</html>

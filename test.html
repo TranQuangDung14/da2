@@ -1,0 +1,111 @@
+<section>
+    <div style="padding-top: 10px;">
+        <p><a href="Home1.html" style="color: black;">Trang chủ </a>
+            <span style="color: tomato;">>Xe Đạp Điện Sunny Fly xanh củ</span>
+        </p>
+    </div>
+    <div class="detail">
+    <h2>CHI TIẾT SẢN PHẨM</h2>
+    <div class="IMG">
+        <p id="xe">
+            <a href="#"><img src="image/5.jpg" alt="ảnh 1"></a>
+        </p>
+        <script>
+            function xe1() {
+                document.getElementById("xe").innerHTML = "<img src='image/5.jpg'/>";
+            }
+        </script>
+        <button type="button" style="width: 23%;margin-left: 0px;margin-top: 10px;" onclick="xe1()"><img src="image/5.jpg"
+                style="width: 100%;height: 100px;" alt="#"></button>
+        <button type="button" style="width: 23%;margin-left: 1.5%;" onclick="xe2()"><img src="image/5-1.jpg"
+                style="width: 100%;height: 100px" alt="#"></button>
+        <button type="button" style="width: 23%;margin-left: 1.5%;" onclick="xe3()"><img src="image/5-4.jpg"
+                style="width: 100%;height: 100px" alt="#"></button>
+        <button type="button" style="width: 23%;margin-left: 1.5%;" onclick="xe4()"><img src="image/5-3.jpg"
+                style="width: 100%;height:100px;" alt="#"></button>
+
+                <script>
+                    function xe2() {
+                        document.getElementById("xe").innerHTML = "<img src='image/5-1.jpg'/>";
+                    }
+                </script>
+                <script>
+                    function xe3() {
+                        document.getElementById("xe").innerHTML = "<img src='image/5-4.jpg'/>";
+                    }
+                </script>
+                <script>
+                    function xe4() {
+                        document.getElementById("xe").innerHTML = "<img src='image/5-3.jpg'/>";
+                    }
+                </script>
+    </div>
+    <div class="product">
+        <h1>Xe Đạp Điện Sunny Fly xanh củ</h1>
+        <p style="margin-top: 20px;" ><span style="font-size: 14px">Availability:</span><span style="color: #00CC00;font-size: 14px">còn 3 hàng</span></p>
+        <p style="padding-top: 20px"><span  style="font-size: 32px; color: #FF6633;">7,000,000đ</span> <span><strike>11,000,000đ</strike></span></p>
+
+        <div class="amount">
+            <p style="color: darkgray;font-size: 25px;margin-top: 20px;">Số Lượng:
+                <span class="cart-quality">
+                    <input class="btn-sub" type="button" value="-" />
+                    <input class="txt-quality" type="text" value="1" />
+                    <input class="btn-plus" type="button" value="+" />
+                    
+                    
+            </span>
+       </p>
+        
+        <script>
+        $(document).ready(function(){
+                var data= sessionStorage.getItem("order");
+                data="["+data+"]";
+                var orderDetails=JSON.parse(data);
+                
+                var items="";
+            $("#content-left").html(items);
+            $(".cart-amount").text(orderDetails.length);
+            $(".cart-number").text("("+orderDetails.length+")");
+            
+            $(".btn-plus").click(function(){
+                var amount=$(this).prev().attr("value");
+                $(this).prev().attr("value",Number(amount)+1);
+            });
+            $(".btn-sub").click(function(){
+                var amount=$(this).next().attr("value");
+                if(Number(amount)>1)
+                $(this).next().attr("value",Number(amount)-1);
+            });
+        });
+    </script>
+    <p style="margin-top: 30px;">
+    <input style="width: 200px;height: 50px;font-size: 100%;background-color: #FF9900;" class="btn-buy" type="button" value="Thêm vào giỏ" />
+    <a href="cart.html"><input style=" color:white;width: 200px;height: 50px;font-size: 100%; background-color: #FF9900;" class="btn-view" type="button" value="Mua hàng" /></a>
+</p>
+      
+
+        </div>
+        <div style="line-height: 20px; margin-top: 30px;">
+            <p><img src="image/quan-ly-chat-luong-xe-dap-dien.jpg" style="width:500px;" ></p>
+            <p>☎ Đặt Mua:&nbsp;
+            <strong>0368928682 | 📢 📢 Giờ mở cửa: <strong>7h30 - 22h</strong></strong></p>
+            <p></p>
+            <h5>TẶNG VOUCHER GIÁ TRỊ:</h5>
+            <p>💖 Giảm 5% thay IC bộ điều khiển</p>
+            <p>💖 Giảm 5% cho kiểm tra và bảo dưỡng xe</p>
+            <p>💖 Giảm 3% thay săm lốp (tại hệ thống TA)</p>
+            <p>💖 Giảm 5% thay bình ác quy | 💖 Giảm 7% thay động cơ</p>
+            <p>💖 1 lần miễn phí kiểm tra bảo dưỡng xe tại TA</p>
+            <h5>DỊCH VỤ SAU BÁN HÀNG:</h5>
+            <p>💝 Giao hàng tận nơi 24/7 | 💝 Bảo hành sửa chữa cứu hộ tận nơi 24/7</p>
+            <p>💝 1 đổi 1 trong vòng 7 ngày | 💝 Kiểm tra sửa chữa miễn phí 100%</p>
+            <h5>(Giá chưa bao gồm phí vận chuyển)</h5>
+            <p></p>
+<br>
+
+        </div>
+    </div>
+
+</div>
+
+</section>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        table {
+            width: 100%;
+            margin: 15px 6px;
+        }
+
+        table td {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="/Home1.html"><img src="/image/logo.jpg" alt="" width="64px"></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="#"><i class="fa fa-cubes"></i> Bảng điều khiển</a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li class="active"><a href="hoadonnhap.html"><i class="fas fa-file-alt"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img style="width: 100%;" src="/image/your-logo.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Sửa hóa đơn nhập</h2>
+                </div>
+            </div>
+            <form action="" method="post">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4"><label> Khách hàng:</label></div>
+                        <div class="col-8">
+                            <select name="loaisanpham"  class="form-control" required>
+                                <option >-- Chọn nhà cung cấp --</option>
+                                <option >Trần Quang Dũng</option>
+                                <option >Nguyễn Đình Quang</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><label> Hình thức thanh toán:</label></div>
+                        <div class="col-8">
+                            <input type="radio" name="payment" checked> Thanh toán khi nhận hàng (COD)<br>
+                            <input type="radio" name="payment"> Thanh toán thẻ tín dụng (ATM)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><label> Trạng thái đơn hàng:</label></div>
+                        <div class="col-8">
+                            <select name="loaisanpham"  class="form-control" required>
+                                <option >Chưa duyệt đơn</option>
+                                <option >Đã duyệt đơn</option>
+                                <option >Đang giao hàng</option>
+                                <option >Đã giao hàng</option>
+                                <option >Hủy đơn hàng</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><label>Ghi chú:</label></div>
+                        <div class="col-8">
+                            <textarea name="mota" class="form-control" placeholder="Nhập ghi chú" rows="6" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table>
+                            <tbody id="ds-san-pham">
+                                <tr>
+                                    <th style="width: 40%;">Sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th style="width: 10%;">Hành động</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-green" id="them-san-pham" type="button">Thêm sản phẩm</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-green">Sửa hóa đơn</button>
+                    <button type="reset" class="btn btn-red">Nhập lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+<script src="/jquery/jquery.min.js"></script>
+
+<script>
+
+    // chuỗi mã html để hiển thị ra form nhập của 1 sp
+    var sp = '<tr>\
+        <td>\
+            <select class="form-control" required>\
+                <option>Sản phẩm 1</option>\
+                <option>Sản phẩm 2</option>\
+                <option>Sản phẩm 3</option>\
+                <option>Sản phẩm 4</option>\
+            </select>\
+        </td>\
+        <td>\
+            <input type="number" class="form-control" placeholder="Số lượng">\
+        </td>\
+        <td>\
+            <input type="number" class="form-control" placeholder="Đơn giá">\
+        </td>\
+        <td>\
+            <button class="btn btn-red" onclick="xoa_san_pham(this)"><i class="fa fa-trash"></i></button>\
+        </td>\
+    </tr>';
+    
+    $("#them-san-pham").click(function(e) { 
+        $("#ds-san-pham").append(sp); 
+    });
+
+    function xoa_san_pham(e) { 
+        let btn = $(e);
+
+        btn.parent().parent().remove(); 
+    }
+</script>
+
+</html>

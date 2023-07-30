@@ -1,0 +1,570 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xe điện.....</title>
+    <link rel="stylesheet" href="home1.css">
+   <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="header.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        // alert("I am ready")
+        // khi click vào đặt mua
+        $(".btn-buy").click(function(){
+            alert("I am ready")
+            var p=$(this).parent();
+            var pImg=p.find(".product-img").attr("src");
+            var pName=p.find(".product-name").text();
+            var pPrice =p.find(".product-price").text();
+
+            var product ={
+               "name":pName,
+               "image": pImg,
+               "price":pPrice,
+            };// alert(pImg+pName+pPrice);
+            var orderDetails=sessionStorage.getItem("order");
+            if(orderDetails !=null)
+                orderDetails +=","+ JSON.stringify(product);
+            else
+                orderDetails = JSON.stringify(product);
+            
+                // alert(orderDetails);
+            //thêm sản phẩm vừa chọn vào session
+            sessionStorage.setItem("order", orderDetails);
+
+            //tăng số lượng ở giỏ hàng
+            var c = $(".cart-amount").text();
+            var amount = Number(c)+1;
+            $(".cart-amount").text(amount);
+            
+        });
+    });
+    </script>
+    
+</head>
+<body>
+    <div id="header">
+        <div id="top-header"> 
+            <div class="logo"> 
+                <img src="image/your-logo.png" alt="logo">
+            </div>
+            <div id="search"> 
+                <input type=" text" name="" placeholder="Search..." class="search-text" />
+                <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                    
+                </button>
+            </div>
+            <div id="user">
+                <div class="account">
+                    <ul>
+                        <li><a href="#">
+                                <div id="icon-user">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="sign-up">
+                                    <span> Đăng nhập / Đăng ký </span> <br>
+                                    Tài khoản <i style="font-size: 20px;" class="fas fa-caret-down"></i>
+                                </div>
+                            </a>
+                            <ul class="user2">
+
+
+                                <a href="login.html">
+                                    <li class="dn"> Đăng nhập</li>
+                                </a>
+                                <a href="Register.html">
+                                    <li class="ttk">Tạo tài khoản</li>
+                                </a>
+                                
+                                <a
+                                    href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjE4ODU4MjQ4LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D">
+                                    <li class="fb"><i class="fab fa-facebook-square"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập băng facebook</li>
+                                </a>
+
+                                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">
+                                    <li class="gmail"><i class="fab fa-google-plus-g"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập bằng gmail</li>
+                                </a>
+
+                                <a href="https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F">
+                                    <li class="zalo">
+                                        <img src="image/Zalo1.jpg" alt="#">
+                                        Đăng nhập bằng zalo
+                                    </li>
+                                </a>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i style="size: 100%; font-size: 30;color: white;" class="fas fa-cart-plus"></i>
+                        giỏ hàng
+                        <label class="cart-amount">0</label>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div id="end-header">
+            <div class="menu">
+                <ul>
+                    <li><a href="Home1.html">TRANG CHỦ</a></li>
+                    <li><a href="#">SẢN PHẨM</a></li>
+                    <!-- <li><a href="#">PHỤ KIỆN</a></li> -->
+                    <li><a href="http://www.bantinxedien.com/" target="_blank">TIN TỨC</a></li>
+                    <li><a href="introduce.html">GIỚI THIỆU</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Phần thân -->
+    
+    <div id="mid">
+        <div id="navigation">
+            <div id="slideshow">
+                <img src="image/banner1.jpg" />
+            </div>
+            <script>
+                autoSlide();
+            </script>
+        </div>
+
+        <!-- chống tràn -->
+        <div class="clearfix"></div>
+
+        <!-- dừng -->
+        <h2>hehe</h2>
+        <div id="content">
+
+            <div id="row">
+                <h2 style=" font-weight: 200;">Sản Phẩm Nổi Bật
+                    <img style="width: 21px;" src="https://frontend.tikicdn.com/_desktop-next/static/img/flash.gif"
+                        alt="flash deal">
+                </h2>
+                <hr style="color: #EEEEEE; size: 1px;">
+                <!-- sản phẩm nối bật -->
+
+
+                <!-- <div class="col-3 col-m-4 col-s-6"> -->
+                    <!-- <div class="product">
+                        <h4> <label class="product-name">Trà chanh leo</label></h4><br />
+                        <div class="box-img">
+                        <img class="product-img" src="image/10-1.jpg" />
+                        </div>
+                       
+                         <label><s>50.000 đ</s></label><label class="product-price">35.000 đ</label>
+                        <input class="btn-buy" type="button" value="mua ngay" />
+                        <input class="btn-view" type="button" value="Chi tiết" /> 
+                    </div>
+                </div>  -->
+               
+             
+                <div class="products">
+                    <ul>
+                        
+                        <li>
+                            <a> 
+                                
+                                <a href="chitietsanpham.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Asama A48 củ</label></h4>
+                                   
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/6.jpg" >
+                                    </div>
+                                
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1  product-price">5,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>9,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="chitietsanpham.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            
+                            
+                            </a>
+                        <!-- <li>
+                            <a> 
+                                
+                                <a href="CTSP-1.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Sunny Fly xanh củ</label></h4>
+                                   
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/5.jpg" >
+                                    </div>
+                                
+                                </a>
+                            
+                                    <br>
+                                    <p class="price1  product-price">7,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>11,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-1.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                              
+                            
+                            
+                            </a>
+                         -->
+                        </li>
+                    
+                        <li>
+                            <a>
+                                <a href="CTSP-1.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Sunny Fly xanh củ</label></h4>
+                                    
+                                    <div class="box-img" >
+                                        <img class="product-img" src="image/5.jpg">
+                                    </div>
+                                </a>
+
+                                    <p class="price1 product-price">7,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>11,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-1.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-2.html">
+                                    <h4><label class="product-name">Xe Đạp Điện củ Jili</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/3.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">8,500,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-2.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-3.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Yamaha Icats – Màu đỏ</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/1.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+
+                                    <p class="price1 product-price">8,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>11,500,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-3.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-4.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Vietmax Run – Màu Cam</label></h4>
+                                    <div class="box-img">
+                                        <img  class="product-img" src="image/2.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+
+                                    <p class="price1 product-price">7,800,000đ</p>
+                                    <p class="review">
+                                        <span><strike>10,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-4.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <a>
+                                <a href="CTSP-5.html">
+                                    <h4><label class="product-name">Xe Đạp Điện 133 Giant – Màu Cam</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/7.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+
+                                    <p class="price1 product-price">8,500,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-5.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-6.html">
+                                    <h4><label class="product-name">Xe Đạp Điện A6</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/4.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">7,800,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-6.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-7.html">
+                                    <h4><label class="product-name">Xe Đạp Điện VietMax Infinity</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/8.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">8,500,000đ</p>
+                                    <p class="review">
+                                        <span><strike>11,500,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-7.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-8.html">
+                                    <h4><label class="product-name">Xe Đạp Điện BATS Anbico</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/9.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">10,500,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-8.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-9.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Bluera XS</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/10.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">9,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-9.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <h2 style=" font-weight: 200;margin-top: 20px;">Sản Phẩm Mới</h2>
+                <hr style="color: #EEEEEE; size: 1px;">
+                <div class="products">
+                    <ul>
+                        <li>
+                            <a>
+                                <a href="CTSP-10.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Nasaki 133 N9</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/11.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">7,300,000đ</p>
+                                    <p class="review">
+                                        <span><strike>9,500,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-10.html"> <input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-11.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Yamaha 18</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/12.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div c lass="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">6,400,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-11.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-12.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Gấp Concise</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/13.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">14,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>18,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-12.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-13.html">
+                                    <h4><label class="product-name">Xe Đạ Điện Bluera 133 XPro</label></h4>
+                                    <div class="box-img">
+                                        <img class="product-img" src="image/14.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+                                    <br>
+                                    <p class="price1 product-price">8,000,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-13.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <a href="CTSP-14.html">
+                                    <h4><label class="product-name">Xe Đạp Điện Bluera 133X Pro Sport</label></h4>
+                                    <div class="box-img"> 
+                                        <img class="product-img" src="image/15.jpg">
+                                    </div>
+                                </a>
+                                <!-- <div class="product-detail"> -->
+
+                                    <p class="price1 product-price">8,500,000đ</p>
+                                    <p class="review">
+                                        <span><strike>12,000,000đ</strike></span>
+                                    </p>
+                                    <input class="btn-buy" type="button" value="Thêm vào giỏ" />
+                                    <a href="CTSP-14.html"><input class="btn-view" type="button" value="Chi tiết" /></a>
+                                <!-- </div> -->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+
+<h2>hehe</h2>
+    <!-- tiếp -->
+    <div class="clearfix"></div>
+    <hr style="color: #EEEEEE; size: 1px;">
+    <div class="footer">
+        <div class="container-web">
+
+            <div style="padding-top: 15px" class="footer-main">
+                <div class="service footer1">
+                    <ul>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên kết</h5>
+                                <p><a href="#">Sản phẩm khuyến mại</a></p>
+                                <p><a href="#">Sản phẩm nổi bật</a></p>
+                                <p><a href="#">Tất cả sản phẩm</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Hỗ trợ</h5>
+                                <p><a href="trangchu.html">Trang chủ</a></p>
+                                <p><a href="#">Sản phẩm </a></p>
+                                <p><a href="tintuc.html">Tin tức</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Dịch vụ</h5>
+                                <p><a href="#">Tìm kiếm</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên hệ</h5>
+                                <a style="color:#fff" href="#"><i class="fa fa-phone"> 0869638364</i>
+                                    <p>Đ/C:Đoàn Đào-Phù Cừ-Hưng Yên</p>
+                                    <p><i class="far fa-envelope"></i>Quangstsdung@gmail.com</p>
+                            </div>
+                            <div id="icon-footer">
+                                <a class="_blank" href="https://www.facebook.com/phut.mot.5015/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fa fa-rss"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a class="_blank" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSBnpsJhVkVXmnpmJBgZsdwFtHTQSTvJDnXWSmcsSqdnXDTKbznNfhFDXZRjnZBXqhGLZHxF" target="_blank"><i class="fab fa-google-plus-g"></i></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container-web">
+                <p style="text-align: center; color: #444444;">Copyright © 2020 by<a href="https://www.facebook.com/phut.mot.5015">
+                        Quang StS Dũng </a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="/Home1.html"><img src="/image/logo.jpg" alt="" width="64px"></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="#"><i class="fa fa-cubes"></i> Bảng điều khiển</a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li class="active"><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li><a href="hoadonnhap.html"><i class="fas fa-file-alt"></i>Hóa đơn nhập</a></li>
+            <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img style="width: 100%;" src="/image/your-logo.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Sửa loại sản phẩm</h2>
+                </div>
+            </div>
+            <form action="" method="post">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4"><label>Tên loại sản phẩm:</label></div>
+                        <div class="col-8">
+                            <input type="text" name="loaisanpham" class="form-control" placeholder="Nhập tên loại sản phẩm" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><label>Mô tả:</label></div>
+                        <div class="col-8">
+                            <textarea name="mota" class="form-control" placeholder="Nhập mô tả cho sản phẩm" rows="6" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-green">Sửa loại sản phẩm</button>
+                    <button type="reset" class="btn btn-red">Nhập lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

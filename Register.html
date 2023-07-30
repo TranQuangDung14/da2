@@ -1,0 +1,286 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xe điện.....</title>
+    <link rel="stylesheet" href="home1.css">
+   <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div id="top-header">
+            <div class="logo">
+                <img src="image/your-logo.png" alt="logo">
+            </div>
+            <div id="search">
+                <input type=" text" name="" placeholder="Search..." class="search-text" />
+                <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                    
+                </button>
+            </div>
+            <div id="user">
+                <div class="account"> 
+                    <ul>
+                        <li><a href="#">
+                                <div id="icon-user">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="sign-up">
+                                    <span> Đăng nhập / Đăng ký </span> <br>
+                                    Tài khoản <i style="font-size: 20px;" class="fas fa-caret-down"></i>
+                                </div>
+                            </a>
+                            <ul class="user2">
+
+
+                                <a href="login.html">
+                                    <li class="dn"> Đăng nhập</li>
+                                </a>
+                                <a href="#">
+                                    <li class="ttk">Tạo tài khoản</li>
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjE4ODU4MjQ4LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D">
+                                    <li class="fb"><i class="fab fa-facebook-square"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập băng facebook</li>
+                                </a>
+
+                                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">
+                                    <li class="gmail"><i class="fab fa-google-plus-g"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập bằng gmail</li>
+                                </a>
+
+                                <a href="https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F">
+                                    <li class="zalo">
+                                        <img src="image/Zalo1.jpg" alt="#">
+                                        Đăng nhập bằng zalo
+                                    </li>
+                                </a>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i style="size: 100%; font-size: 30;color: white;" class="fas fa-cart-plus"></i>
+                        giỏ hàng
+                        <label class="cart-amount">0</label>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div id="end-header">
+            <div class="menu">
+                <ul>
+                    <li><a href="Home1.html">TRANG CHỦ</a></li>
+                    <li><a href="#">SẢN PHẨM</a></li>
+                    <!-- <li><a href="#">PHỤ KIỆN</a></li> -->
+                    <li><a href="http://www.bantinxedien.com/" target="_blank">TIN TỨC</a></li>
+                    <li><a href="introduce.html">GIỚI THIỆU</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkEmail(){
+               var email=document.getElementById("email").value;
+               var aCong=email.indexOf("@");
+               var dot = email.lastIndexOf(".");
+               if ((aCong<1) || (dot<aCong+2) || (dot+2>email.length)) {
+                   document.getElementById("ktra1").innerHTML="Vui lòng nhập lại email.Ví dụ:abc@gmail.com";
+                   
+               }
+               else {
+                   document.getElementById("ktra1").innerHTML="";
+               }
+           }
+           function checkPwd(){
+       var password = document.getElementById("password").value;
+       if ( password.length <6) {
+           document.getElementById("ktra2").innerHTML="Mật khẩu ít nhất 6 kí tự.Vui lòng nhập lại!!";
+                   
+               }
+               else {
+                   document.getElementById("ktra2").innerHTML="";
+               
+       }
+   }
+   function checkCfpwd(){
+       var cfpassword = document.getElementById("cfpassword").value;
+       var password = document.getElementById('password').value;
+       if (cfpassword!==password) {
+           document.getElementById("ktra3").innerHTML="Nhập lại chưa đúng!!";
+                   
+               }
+               else {
+                   document.getElementById("ktra3").innerHTML="";
+       }
+   }
+   function kiemtraho(){
+               var ten = document.getElementById("txtHo").value;
+               if(ten==""){
+                   document.getElementById("ktra4").innerHTML = "Vui lòng nhập Họ  ";
+               }
+       
+               for(i=0;i<ten.length;i++){
+                   if(!isNaN(ten[i])){
+                       document.getElementById("ktra4").innerHTML ="Không được nhập ký tự số";
+                   }
+                   else
+                       document.getElementById("ktra4").innerHTML ="";
+               }
+       
+           }
+
+
+        //    kt05
+           
+           //Kiểm tra Số điện thoại nhập đúng ko???	
+           function kiemtraSDT(){
+               var sdt = document.getElementById("txtSDT").value;
+               if(sdt==""){
+                   document.getElementById("ktra6").innerHTML = "Vui lòng nhập Số điện thoại";
+               }
+               else{
+                   if(!isNaN(sdt)){
+                       document.getElementById("ktra6").innerHTML ="";}
+                       else
+                       {
+                           document.getElementById("ktra6").innerHTML ="Vui lòng nhập đúng ký tự số";
+                       }
+                   }
+                   
+                   if(sdt.length < 10 || sdt.length > 11){
+                       document.getElementById("ktra6").innerHTML ="Số điện thoại chưa đúng!";
+                   }
+                   
+               }
+               function kiemtrarong(){
+                   var x=document.getElementById("txt").value;
+                   if(x==""){
+                       document.getElementById("ktra7").innerHTML="Vui lòng nhập địa chỉ nhận hàng.";
+                   }
+                   else{
+                       document.getElementById("ktra7").innerHTML="";
+                   }
+               }
+               function kiemtraten(){
+               var ten = document.getElementById("txtTen").value;
+               if(ten==""){
+                   document.getElementById("ktra5").innerHTML = "Vui lòng nhập Tên  ";
+               }
+       
+               for(i=0;i<ten.length;i++){
+                   if(!isNaN(ten[i])){
+                       document.getElementById("ktra5").innerHTML ="Không được nhập ký tự số";
+                   }
+                   else
+                       document.getElementById("ktra5").innerHTML ="";
+               }
+       
+           }
+           </script>
+
+
+
+
+
+
+
+<section>
+    <!-- <div class="out"> -->
+	<div class="diachi">
+        <p class="diachi-1" style="text-align: center;padding-top: 20px;">Đăng kí </p>
+        <span style="color: red;font-size: 12px;" id= "ktra5"> </span> <br>
+        <input  id="txtTen" class="trangdo" type="text" placeholder="Họ tên" onblur="kiemtraten()" style="margin-bottom: 20px"><br>
+        
+        <span style="color: red;font-size: 12px;" id="ktra2"> </span>
+        <input id="password" class="trangdo" type="password" placeholder="Mật khẩu" onblur="checkPwd()"><br>
+
+        <span style="color: red;font-size: 12px;" id="ktra3"> </span><br>
+        <input id="cfpassword" class="trangdo"type="password"  placeholder="Nhập lại mật khẩu" onblur="checkCfpwd()"> <br>
+        
+        <span style="color: red;font-size: 12px;" id= "ktra1"> </span>
+        <input id="email" class="trangdo" type="email" placeholder="Email" onblur="checkEmail()"><br>
+        
+        <span style="color: red;font-size: 12px;" id= "ktra6"> </span><br>
+        <input  id="txtSDT" class="trangdo" type="text" placeholder="Số điện thoại" onblur="kiemtraSDT()"><br>
+        
+        <button class="btn btn-yellow trang ">
+            Đăng kí
+        </button>
+
+    </div>
+<!-- </div> -->
+</section>
+
+
+
+    <div class="clearfix"></div>
+    <hr style="color: #EEEEEE; size: 1px;">
+    <div class="footer">
+        <div class="container-web">
+
+            <div style="padding-top: 15px" class="footer-main">
+                <div class="service footer1">
+                    <ul>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên kết</h5>
+                                <p><a href="#">Sản phẩm khuyến mại</a></p>
+                                <p><a href="#">Sản phẩm nổi bật</a></p>
+                                <p><a href="#">Tất cả sản phẩm</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Hỗ trợ</h5>
+                                <p><a href="trangchu.html">Trang chủ</a></p>
+                                <p><a href="#">Sản phẩm </a></p>
+                                <p><a href="tintuc.html">Tin tức</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Dịch vụ</h5>
+                                <p><a href="#">Tìm kiếm</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên hệ</h5>
+                                <a style="color:#fff" href="#"><i class="fa fa-phone"> 0869638364</i>
+                                    <p>Đ/C:Đoàn Đào-Phù Cừ-Hưng Yên</p>
+                                    <p><i class="far fa-envelope"></i>Quangstsdung@gmail.com</p>
+                            </div>
+                            <div id="icon-footer">
+                                <a class="_blank" href="https://www.facebook.com/phut.mot.5015/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fa fa-rss"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a class="_blank" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSBnpsJhVkVXmnpmJBgZsdwFtHTQSTvJDnXWSmcsSqdnXDTKbznNfhFDXZRjnZBXqhGLZHxF" target="_blank"><i class="fab fa-google-plus-g"></i></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container-web">
+                <p style="text-align: center; color: #444444;">Copyright © 2020 by<a href="https://www.facebook.com/phut.mot.5015">
+                        Quang StS Dũng </a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

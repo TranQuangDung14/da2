@@ -1,0 +1,351 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xe điện.....</title>
+    <link rel="stylesheet" href="home1.css">
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="header.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="jquery/jquery.js"></script>
+    
+    <script>
+		// $(document).ready(function(){
+		// 	var data= sessionStorage.getItem("order");
+		// 	data="["+data+"]";
+		// 	var orderDetails=JSON.parse(data);
+		// 	//Hiển thị tất cả sp
+		// 	var items="";
+		// 	for (var i=0; i<orderDetails.length;i++)
+		// 	{       
+		// 		items +=`<div class="cart-item">
+                                    		
+		// 		<img src="${orderDetails[i].image}" />
+		// 			<div class="cart-product"> 
+		// 				<label class="item-name">${orderDetails[i].name}</label>
+                        
+					     	
+		// 			</div>
+		// 			<div class="cart-price">
+		// 				<label class="item-price">${orderDetails[i].price}</label>
+						
+		// 			</div>
+        //             <div class="cart-quality1">
+        //                  <input class="btn-sub1" type="button" value="-" />
+        //                  <input class="txt-quality1" type="text" value="1" />
+        //                  <input class="btn-plus1" type="button" value="+" />
+                         
+        //             </div>
+        //             <div> 
+        //                 <label class="item-delete">Xóa</label>
+        //             </div>
+        //             </div>
+        //           `;
+		// 	}
+                        
+		// 	$("#content-left").html(items);
+		// 	//cộng slg sp trong giỏ hàng
+		// 	$(".cart-amount").text(orderDetails.length);
+		// 	//cộng slg sp trong phần mô tả
+		// 	$(".cart-number").text("(" + orderDetails.length + " sản phẩm)");
+			
+		// 	//tăng giảm slg sp
+		// 	$(".btn-plus").click(function(){
+		// 		var amount= $(this).prev().attr("value");
+		// 		$(this).prev().attr("value", Number(amount)+1);
+                              
+                              
+		// 	});
+		// 	$(".btn-sub").click(function(){
+		// 		var amount= $(this).next().attr("value");
+		// 		if(Number(amount)>1)
+		// 			$(this).next().attr("value", Number(amount)-1);
+		// 	});
+                       
+                     
+        //                 var remove_cart = document.getElementsByClassName("item-delete");
+        //                 for(var i= 0 ; i< remove_cart.length; i++){
+        //                         var button= remove_cart[i]
+        //                         button.addEventListener("click", function(){
+        //                                 var button_remove = event.target
+        //                                 button_remove.parentElement.parentElement.remove()
+        //                                 updatecart()
+        //                         });
+                              
+        //                 }  
+
+		$(document).ready(function(){
+            // for( var a = 0;a<orderDetails.length; a++ ){
+			var data = sessionStorage.getItem("order");
+			data = "["+data+"]";
+			var orderDetails =JSON.parse(data);
+			var items = "";
+			for(var i = 0;i<orderDetails.length; i++)
+			{
+				items += `<div class="cart-item">
+                    <img src="${orderDetails[i].image}" />
+                    <div class="cart-product">
+                        <label class="item-name">${orderDetails[i].name}</label>
+                    </div>
+                    <div class="cart-price">
+                        <label class="item-price">${orderDetails[i].price}</label>
+                      
+                    </div>
+                    
+                    <div class="cart-quality1">
+                        <input class="btn-sub1" type="button" value="-" />
+                        <input class="txt-quality1" type="text" value="1" />
+                        <input class="btn-plus1" type="button" value="+" />
+                    </div>
+                    <div>
+                    <label class="item-delete">Xóa</label>
+                    
+                    </div>
+                    <br>
+                </div>
+                `;
+                
+			}
+			$("#content-left").html(items);
+            // cộng số lượng sản phẩm trong giỏ
+			
+			$(".cart-amount").text(orderDetails.length);
+			$(".cart-number").text("("+orderDetails.length	+ " sản phẩm)");
+			
+			$(".btn-plus1").click(function(){
+				var amount = $(this).prev().attr("value");
+				$(this).prev().attr("value",Number(amount)+1);
+                $("#tonggia").text((Number(amount)+1)*5000000)
+			});
+			$(".btn-sub1").click(function(){
+				var amount = $(this).next().attr("value");
+				if(Number(amount)>1)
+					$(this).next().attr("value",Number(amount)-1);
+                    $("#tonggia").text((Number(amount)-1)*5000000)
+			});
+            var remove_cart = document.getElementsByClassName("item-delete");
+                        for(var i= 0 ; i< remove_cart.length; i++){
+                                var button= remove_cart[i]
+                                button.addEventListener("click", function(){
+                                        var button_remove = event.target
+                                        button_remove.parentElement.parentElement.remove()
+                                        updatecart()
+                                });
+                              
+                        }
+
+
+                        // tăng tiền
+            // $(document).ready(function(){
+            //     $('.txt-quality1').change(function(event){
+            //         var a=txt-quality1.value;
+            //         document.getElementsByClassName("item-price")[0].innerText=a*6000000;
+            //         document.getElementById("tonggia").innerText=a*a;
+            //     })
+            // })
+ 
+        });
+	</script>
+    <!-- <script>
+           $(".item-delete").click(function() { 
+            $(this).parent().parent().remove(); 
+        });
+    </script> -->
+
+
+
+</head>
+
+<body>
+    
+    <div id="header">
+        <div id="top-header">
+            <div class="logo">
+                <img src="image/your-logo.png" alt="logo">
+            </div>
+            <div id="search">
+                <input type=" text" name="" placeholder="Search..." class="search-text" />
+                <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="user">
+                <div class="account">
+                    <ul>
+                        <li><a href="#">
+                                <div id="icon-user">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="sign-up">
+                                    <span> Đăng nhập / Đăng ký </span> <br>
+                                    Tài khoản <i style="font-size: 20px;" class="fas fa-caret-down"></i>
+                                </div>
+                            </a>
+                            <ul class="user2">
+
+
+                                <a href="login.html">
+                                    <li class="dn"> Đăng nhập</li>
+                                </a>
+                                <a href="Register.html">
+                                    <li class="ttk">Tạo tài khoản</li>
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjE4ODU4MjQ4LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D">
+                                    <li class="fb"><i class="fab fa-facebook-square"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập băng facebook</li>
+                                </a>
+
+                                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">
+                                    <li class="gmail"><i class="fab fa-google-plus-g"
+                                            style="font-size: 20px;margin-right: 4px;"></i>
+                                        Đăng nhập bằng gmail</li>
+                                </a>
+
+                                <a href="https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F">
+                                    <li class="zalo">
+                                        <img src="image/Zalo1.jpg" alt="#">
+                                        Đăng nhập bằng zalo
+                                    </li>
+                                </a>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i style="size: 100%; font-size: 30;color: white;" class="fas fa-cart-plus"></i>
+                        giỏ hàng
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div id="end-header">
+            <div class="menu">
+                <ul>
+                    <li><a href="Home1.html">TRANG CHỦ</a></li>
+                    <li><a href="#">SẢN PHẨM</a></li>
+                    <!-- <li><a href="#">PHỤ KIỆN</a></li> -->
+                    <li><a href="http://www.bantinxedien.com/" target="_blank">TIN TỨC</a></li>
+                    <li><a href="introduce.html">GIỚI THIỆU</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="content1">
+        <div id="content-title">
+            <label class="cart-title">GIỎ HÀNG</label>
+            <label class="cart-number">(0 sản phẩm)</label>
+            <p><label class="cart-menu" >
+                Hình ảnh&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Tên sản phẩm&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Giá tiền&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                     Số lượng 
+            </label></p>
+            <hr style="color: #EEEEEE; size: 1px;">
+            <div class="clearfix"></div>
+        </div>
+        <div id="content-left" class="col-9 col-m-6 col-s-12">
+            
+            <div class="clearfix"></div>
+           
+        </div>
+        <div class="pay" style="float: right;">
+            Tổng cộng : <span id="tonggia" style="color: tomato;height: 200px; font-size: 20px;">5,000,000</span>
+            Đ<br>
+           <br>
+           <a href="pay.html"> <input class="btn-buy" type="button" value="Thanh toán" /></a>
+            <!-- <button class="btn-buy"><a style="color: white;" href="pay.html">Thanh toán</a></button> -->
+            
+                <!-- <a href="pay.html">Thanh toán</a> -->
+            
+        </div>
+    </div>
+
+    <!-- <div class="clearfix"></div> -->
+    
+   
+    
+
+    <!-- footrt -->
+    <div class="clearfix"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr style="color: #EEEEEE; size: 1px;">
+    <div class="footer">
+        <div class="container-web">
+
+            <div style="padding-top: 15px" class="footer-main">
+                <div class="service footer1">
+                    <ul>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên kết</h5>
+                                <p><a href="#">Sản phẩm khuyến mại</a></p>
+                                <p><a href="#">Sản phẩm nổi bật</a></p>
+                                <p><a href="#">Tất cả sản phẩm</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Hỗ trợ</h5>
+                                <p><a href="trangchu.html">Trang chủ</a></p>
+                                <p><a href="#">Sản phẩm </a></p>
+                                <p><a href="tintuc.html">Tin tức</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Dịch vụ</h5>
+                                <p><a href="#">Tìm kiếm</a></p>
+                                <p><a href="gioithieu.html">Giới thiệu</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sales">
+                                <h5>Liên hệ</h5>
+                                <a style="color:#fff" href="#"><i class="fa fa-phone"> 0869638364</i>
+                                    <p>Đ/C:Đoàn Đào-Phù Cừ-Hưng Yên</p>
+                                    <p><i class="far fa-envelope"></i>Quangstsdung@gmail.com</p>
+                            </div>
+                            <div id="icon-footer">
+                                <a class="_blank" href="https://www.facebook.com/phut.mot.5015/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fa fa-rss"></i></a>
+                                <a class="_blank" href="/#" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a class="_blank" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSBnpsJhVkVXmnpmJBgZsdwFtHTQSTvJDnXWSmcsSqdnXDTKbznNfhFDXZRjnZBXqhGLZHxF" target="_blank"><i class="fab fa-google-plus-g"></i></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container-web">
+                <p style="text-align: center; color: #444444;">Copyright © 2020 by<a
+                        href="https://www.facebook.com/phut.mot.5015">
+                        Quang StS Dũng </a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
